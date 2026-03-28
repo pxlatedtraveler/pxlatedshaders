@@ -1,7 +1,0 @@
-# Dependency directories
-node_modules/
-
-# Secrets and Cofig
-.env
-*.local
-auth.json
