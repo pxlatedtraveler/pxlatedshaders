@@ -9,8 +9,8 @@ const shaderProgramCache = new Map();
 
 export async function createPixiFilter (shaderName, resources = { timeUniforms: { uTime: { value: 0.0, type: 'f32' } } }) {
 
-    const vertPath = `./src/shaders/${shaderName}/${shaderName}.vert`;
-    const fragPath = `./src/shaders/${shaderName}/${shaderName}.frag`;
+    const vertPath = `src/shaders/${shaderName}/${shaderName}.vert`;
+    const fragPath = `src/shaders/${shaderName}/${shaderName}.frag`;
 
     if (!shaderProgramCache.has(shaderName)) {
 

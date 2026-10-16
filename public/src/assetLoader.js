@@ -8,10 +8,10 @@ export async function loadAssets(type, bundleName, nameArray = []) {
     const assetBundle = {};
 
     for (let i = 0; i < nameArray.length; i++) {
+
         assetBundle[nameArray[i]] = `src/images/${type}/${nameArray[i]}.${type}`;
-        console.log(`./src/images/${type}/${nameArray[i]}.${type}}`);
+
     }
-    console.log('bundle:', assetBundle);
 
     PIXI.Assets.addBundle(bundleName, assetBundle);
 

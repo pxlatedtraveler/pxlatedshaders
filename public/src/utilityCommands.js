@@ -30,6 +30,40 @@ export const DataTypes = {
     KTX2: 'ktx2'
 }
 
+export function resize (containers = [], size = { width : 1, height: 1 }) {
+    
+    if (!Array.isArray(containers)) containers = [containers];
+
+     for (let i = 0; i < containers.length; i++) {
+
+        if (size.width) containers[i].width = size.width;
+        if (size.height) containers[i].height = size.height;
+
+     }
+
+}
+
+export function ratioResize (appSize = { height, width }, assets = [], originalSize = { height, width }) {
+
+    if (!Array.isArray(assets)) assets = [assets];
+    const ratio = Math.min(appSize.width / originalSize.width, appSize.height / originalSize.height);
+
+    //assets.scale.set(ratio);
+    //assets.width = originalSize.width * ratio;
+    //assets.height = originalSize.height * ratio;
+    for (let i = 0; i < assets.length; i++) {
+        assets[i].scale.set(ratio);
+    }
+    console.warn('ratio: ', ratio);
+    console.log('app size: ', appSize);
+    console.log('original assets size: ', originalSize);
+    console.log('new assets size: ', assets.width, assets.height);
+
+
+    //worm.y = newHeight / 2 - worm.height / 2;
+
+}
+
 export function destroySprites (sprites = [], options = {}) {
 
     if (!Array.isArray(sprites)) sprites = [sprites];
